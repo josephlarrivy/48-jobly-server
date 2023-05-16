@@ -5,22 +5,21 @@ const cors = require("cors");
 const morgan = require("morgan");
 
 const { NotFoundError } = require("./ExpressError");
-const authRoutes = require("./routes/authRoutes");
-const companyRoutes = require('./routes/companyRoutes')
-const jobsRoutes = require("./routes/jobsRoutes")
-const usersRoutes = require("./routes/usersRoutes")
-
+const authRoutes = require("./routes/auth");
+const companiesRoutes = require("./routes/companies");
+const usersRoutes = require("./routes/users");
+const jobsRoutes = require("./routes/jobs");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(morgan("tiny"));
+
 app.use("/auth", authRoutes);
-app.use("/companies", companyRoutes);
+app.use("/companies", companiesRoutes);
 app.use("/users", usersRoutes);
 app.use("/jobs", jobsRoutes);
-
 
 
 
