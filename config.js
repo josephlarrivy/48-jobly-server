@@ -10,9 +10,7 @@ const PORT = +process.env.PORT || 3001;
 
 
 function getDatabaseUri() {
-    return (process.env.NODE_ENV === "test")
-        ? "mapApplicationDB-testing"
-        : process.env.DATABASE_URL || "mapApplicationDB";
+    return 'jobly'
 }
 
 // function getDatabaseUri() {
